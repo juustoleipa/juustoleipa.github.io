@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Cheese Biscuit</title>
-    <style>
-    #wrapper { margin: 10px; }
+#wrapper { margin: 10px; }
 
 /* BEGIN: Общие стили */
 .menu,
@@ -137,26 +131,3 @@ li:hover > .sub-menu {
   color: #F2762E !important; /* !important VS .menu a:hover */
 }
 /* END: Подменю */
-</style>
-  </head>
-  <body>
-    <div id="wrapper">
-      <nav>
-        <ul class="menu">
-          <li class="home current"><a href="#"><span>Home</span></a></li>
-          <li><a href="#"><span>About</span></a></li>
-          <li><a href="#"><span>Service</span></a>
-            <ul class="sub-menu">
-              <li><a href="#">Sub-menu 1</a></li>
-              <li><a href="#">Sub-menu 2</a></li>
-              <li><a href="#">Sub-menu 3</a></li>
-            </ul>
-          </li>
-          <li><a href="#"><span>Application Form</span></a></li>
-          <li><a href="#"><span>Blog</span></a></li>
-          <li><a href="#"><span>Contacts</span></a></li>
-        </ul>
-      </nav>
-    </div>
-  </body>
-</html>
