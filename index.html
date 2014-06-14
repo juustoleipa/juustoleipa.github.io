@@ -1,169 +1,106 @@
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>juustoleipa</title>
-    <style>
-    #wrapper { margin: 10px; }
+<head>
 
-/* BEGIN: Общие стили */
-.menu,
-.sub-menu {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu li {
-  background-color: #3E454D;
-  cursor: pointer;
-  position: relative;
-  transition: background-color .5s;
-  -moz-transition: background-color .5s;
-  -o-transition: background-color .5s;
-  -webkit-transition: background-color .5s;
-  /* IE lt 10, Chrome lt 1, Opera lt 11.6, Safari lt 3, FF lt 4, Android lt 2.1 и iOS lt 2.0 не поддерэивают transition. */
-}
-
-.menu li:hover {
-  background-color: #353B41 !important; /* .menu > li.home может иметь больше приоритета. Поэтому. */
-}
-
-.menu a {
-  color: #FFF;
-  display: block;
-  font-family: 'Open Sans', sans-serif;
+<title>j u u s t o l e i p a</title>
+<style>
+html {
   height: 100%;
-  margin: 0 5px;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  word-wrap: break-word;
 }
 
-.menu a:hover {
-  /* Защита от простого a:hover. */
-  color: #FFF;
-}
-/* END: Общие стили */
-
-/* BEGIN: Главное меню */
-.menu {
-  /* Рекомендуется задать высоту главного меню именно отсюда. */
-  height: 90px;
+body {
+  background: -webkit-radial-gradient(center center, circle cover, white, #cccccc);
+  background: -moz-radial-gradient(center center, circle cover, white, #cccccc);
+  background: radial-gradient(center center, circle cover, #ffffff, #cccccc);
 }
 
-.menu > li {
-  float: left;
-  height: 100%;
-  width: 15%; /* Мудакам которые не поддерживают calc. */
-  width: calc((100% - 90px) / 5);
-  width: -moz-calc((100% - 90px) / 5);
-  width: -webkit-calc((100% - 90px) / 5);
-  /* IE lt 9, Chrome lt 19, Opera lt 15, Safari lt 6, FF lt 4, Android и iOS не поддерэивают calc. */
-}
-
-.menu > li.home {
-  background: #3E454D url(http://s26.postimg.org/qbf4q4j9h/home.png) center no-repeat;
-  width: 90px;
-}
-
-.menu > li.current {
-  background-color: #F2762E !important; /* !important VS .menu li:hover */
-  box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  /* IE lt 9, Chrome lt 1, Opera lt 10.5, Safari lt 3, FF lt 3.5, Android lt 2.1 и iOS lt 2.0 не поддерэивают box-shadow. */
-}
-
-.menu > li:not(:first-child) {
-  box-shadow: inset 1px 0 0 0 #272B31, inset 2px 0 0 0 #434A52;
-  -moz-box-shadow: inset 1px 0 0 0 #272B31, inset 2px 0 0 0 #434A52;
-  -webkit-box-shadow: inset 1px 0 0 0 #272B31, inset 2px 0 0 0 #434A52;
-}
-
-.menu > li.home > a {
-  color: transparent !important;
-}
-
-.menu > li > a > span {
-  left: 0; /* Селектор .menu a выравнивает содержимое по центру, из-за чего span начинается от центра. Исправляем. */
+.wtf {
   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
   right: 0;
-  top: 50%;
-  transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  -moz-transform: translate(0, -50%);
-  -o-transform: translate(0, -50%);
-  -webkit-transform: translate(0, -50%);
-  /* IE lt 9, Chrome lt 5, Opera lt 10.5, Safari lt 3.1, FF lt 3.5, Android lt 2.1 и iOS lt 2.0 не поддерэивают transform. */
-}
-/* END: Главное меню */
-
-/* BEGIN: Подменю */
-.sub-menu {
-  max-height: 0;
-  min-width: 100%;
+  margin: auto;
+  width: 100px;
+  height: 100px;
   overflow: hidden;
+}
+.wtf:before {
+  content: '';
   position: absolute;
-  top: 100%;
-  transition: max-height .5s .2s;
-  -moz-transition: max-height .5s .2s;
-  -o-transition: max-height .5s .2s;
-  -webkit-transition: max-height .5s .2s;
+  width: 20px;
+  height: 20px;
+  background: black;
+  box-shadow: 0px 0px 0 #c5b893, 20px 0px 0 #7ea3ec, 40px 0px 0 #c5e21a, 60px 0px 0 #5ec6f6, 80px 0px 0 #1f0ef3, 0px 20px 0 #d0cddc, 20px 20px 0 #204737, 40px 20px 0 #908d9d, 60px 20px 0 #1b09dc, 80px 20px 0 #23c6e1, 0px 40px 0 #2ee478, 20px 40px 0 #3ba043, 40px 40px 0 #c609cc, 60px 40px 0 #c75cf2, 80px 40px 0 #0876b5, 0px 60px 0 #608930, 20px 60px 0 #cb3343, 40px 60px 0 #f842d2, 60px 60px 0 #f2f4cb, 80px 60px 0 #2e60fe, 0px 80px 0 #9b1985, 20px 80px 0 #35c609, 40px 80px 0 #7c1cf6, 60px 80px 0 #e960fd, 80px 80px 0 #f86b94;
+  animation: foo 5s linear alternate infinite, bar 4s steps(1) alternate infinite;
+}
+.wtf:hover {
+  border-radius: 50%;
 }
 
-li:hover > .sub-menu {
-  max-height: 600px;
+@keyframes bar {
+  20% {
+    border-top-left-radius: 70%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 70%;
+    border-bottom-left-radius: 0;
+  }
+
+  40% {
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 50%;
+  }
+
+  60% {
+    border-top-left-radius: 0;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
+
+  80% {
+    border-top-left-radius: 0;
+    border-top-right-radius: 70%;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 70%;
+  }
 }
 
-.sub-menu li {
-  height: 60px;
+@keyframes foo {
+  20% {
+    background: #c752e8;
+    box-shadow: 0px 0px 0 #8ee05f, 20px 0px 0 #0dabe1, 40px 0px 0 #77494f, 60px 0px 0 #004c4f, 80px 0px 0 #0324d8, 0px 20px 0 #310a92, 20px 20px 0 #addf7d, 40px 20px 0 #6d3492, 60px 20px 0 #10bb85, 80px 20px 0 #ad5633, 0px 40px 0 #efd373, 20px 40px 0 #5219d0, 40px 40px 0 #7604de, 60px 40px 0 #716924, 80px 40px 0 #908f93, 0px 60px 0 #43c42a, 20px 60px 0 #42a091, 40px 60px 0 #8deb9e, 60px 60px 0 #30a623, 80px 60px 0 #103c1a, 0px 80px 0 #4c2d7e, 20px 80px 0 #c5caed, 40px 80px 0 #b36050, 60px 80px 0 #8f74ad, 80px 80px 0 #846363;
+  }
+
+  40% {
+    background: #249e7f;
+    box-shadow: 0px 0px 0 #cec60b, 20px 0px 0 #75e740, 40px 0px 0 #6a8bf3, 60px 0px 0 #726b8c, 80px 0px 0 #be2778, 0px 20px 0 #c0c73d, 20px 20px 0 #b46781, 40px 20px 0 #8116ec, 60px 20px 0 #9c65b2, 80px 20px 0 #29bf3d, 0px 40px 0 #ad313d, 20px 40px 0 #85660b, 40px 40px 0 #d8fb67, 60px 40px 0 #b4a296, 80px 40px 0 #811d07, 0px 60px 0 #fa18e7, 20px 60px 0 #411056, 40px 60px 0 #38e5c2, 60px 60px 0 #02aec2, 80px 60px 0 #e0ad6a, 0px 80px 0 #1e6c7e, 20px 80px 0 #eed58b, 40px 80px 0 #4f6425, 60px 80px 0 #e001d1, 80px 80px 0 #3ffe25;
+  }
+
+  60% {
+    background: #9dbb75;
+    box-shadow: 0px 0px 0 #7b392c, 20px 0px 0 #dbacbd, 40px 0px 0 #8be775, 60px 0px 0 #cf1b48, 80px 0px 0 #e799be, 0px 20px 0 #66faea, 20px 20px 0 #bc3a52, 40px 20px 0 #c8acc3, 60px 20px 0 #ebdbf8, 80px 20px 0 #d528e4, 0px 40px 0 #b58b51, 20px 40px 0 #adfede, 40px 40px 0 #20419c, 60px 40px 0 #b15b55, 80px 40px 0 #6f5943, 0px 60px 0 #8f6d91, 20px 60px 0 #9adb43, 40px 60px 0 #b13d29, 60px 60px 0 #91ca29, 80px 60px 0 #5875e0, 0px 80px 0 #c674af, 20px 80px 0 #bd2369, 40px 80px 0 #5fc4ba, 60px 80px 0 #840ee3, 80px 80px 0 #6cde43;
+  }
+
+  80% {
+    background: #f0a8a3;
+    box-shadow: 0px 0px 0 #e9159c, 20px 0px 0 #8565ce, 40px 0px 0 #c931f3, 60px 0px 0 #34c927, 80px 0px 0 #665582, 0px 20px 0 #f918ca, 20px 20px 0 #8812fa, 40px 20px 0 #655508, 60px 20px 0 #137d18, 80px 20px 0 #c44653, 0px 40px 0 #1c9b4c, 20px 40px 0 #d93e81, 40px 40px 0 #301236, 60px 40px 0 #e0940c, 80px 40px 0 #693dec, 0px 60px 0 #31ccfa, 20px 60px 0 #c4d5ce, 40px 60px 0 #7c775a, 60px 60px 0 #cbcb6a, 80px 60px 0 #9fcbd6, 0px 80px 0 #643a21, 20px 80px 0 #5133ee, 40px 80px 0 #0c7c18, 60px 80px 0 #ad1fc2, 80px 80px 0 #73bff1;
+  }
+
+  100% {
+    background: #d15edc;
+    box-shadow: 0px 0px 0 #250f31, 20px 0px 0 #0733e0, 40px 0px 0 #1c5f13, 60px 0px 0 #6fc44b, 80px 0px 0 #83864d, 0px 20px 0 #c7ca17, 20px 20px 0 #47d566, 40px 20px 0 #62035b, 60px 20px 0 #3b4958, 80px 20px 0 #b2e8f2, 0px 40px 0 #d52d7a, 20px 40px 0 #aff390, 40px 40px 0 #af08d6, 60px 40px 0 #f6a189, 80px 40px 0 #19856d, 0px 60px 0 #e81d37, 20px 60px 0 #f1100d, 40px 60px 0 #83e74e, 60px 60px 0 #5737ca, 80px 60px 0 #a1ed1e, 0px 80px 0 #726970, 20px 80px 0 #c26680, 40px 80px 0 #0c0b62, 60px 80px 0 #3eaa8e, 80px 80px 0 #a2374a;
+  }
 }
 
-.sub-menu a {
-  line-height: 60px;
-  transition: color .5s;
-  -moz-transition: color .5s;
-  -o-transition: color .5s;
-  -webkit-transition: color .5s;
-  white-space: nowrap;
-}
-
-.sub-menu li.current a,
-.sub-menu a:hover {
-  color: #F2762E !important; /* !important VS .menu a:hover */
-}
-/* END: Подменю */
 </style>
-  </head>
-  <body>
-    <div id="wrapper">
-      <nav>
-        <ul class="menu">
-          <li class="home current"><a href="#"><span>Home</span></a></li>
-          <li><a href="#about"><span>About</span></a></li>
-          <li><a href="#"><span>Service</span></a>
-            <!--<ul class="sub-menu">
-              <li><a href="#">Sub-menu 1</a></li>
-              <li><a href="#">Sub-menu 2</a></li>
-              <li><a href="#">Sub-menu 3</a></li>
-            </ul>-->
-          </li>
-          <li><a href="#"><span>Recruiting</span></a></li>
-          <li><a href="#"><span>Blog</span></a></li>
-          <li><a href="#"><span>Contact</span></a></li>
-        </ul>
-      </nav>
-    </div>
-    <div id = "content">
-      <h2 id = "about">
-        About Us
-      </h2>
-      <p>Coming soon...</p>
-    </div>
-  </body>
+
+</head>
+
+<body>
+
+
+</body>
+<div class="wtf"></div>
 </html>
